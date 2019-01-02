@@ -1,21 +1,30 @@
 <template>
-    <div class="iVue">
-        <h1>
-            <span>hello Vue!</span>
-        </h1>
+    <div>
+        {{msg}}
+        <div>
+            <router-link to="/home">首页</router-link>
+            <router-link to="/list">列表页</router-link>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "App"
+        data(){
+            return{
+                msg:"Hello Vue!"
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .iVue h1 span{
-        display: block;
-        background-color: red;
-        color: yellow;
+    a{
+        color: #333;
+        text-decoration: none;
+    }
+    .router-link-active{
+        color: red;
     }
 </style>
